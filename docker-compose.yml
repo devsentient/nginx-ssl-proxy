@@ -1,0 +1,12 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:1.22-alpine
+    ports:
+      - "443:443"
+    volumes:
+      - ./configdir:/etc/nginx/conf.d
+      - ./certs:/etc/nginx/certs
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: always
