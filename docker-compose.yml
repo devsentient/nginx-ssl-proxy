@@ -4,6 +4,7 @@ services:
     image: nginx:1.22-alpine
     ports:
       - "443:443"
+      - "8030:8030"
     volumes:
       - ./configdir:/etc/nginx/conf.d
       - ./certs:/etc/nginx/certs
